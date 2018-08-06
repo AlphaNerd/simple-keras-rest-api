@@ -1,0 +1,52 @@
+<h1>Upload photo</h1>
+<style>
+span { font-weight: bold; }
+</style>
+
+<form id='plant-form'>
+  <input
+    type='file'
+    onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])"
+  />
+  <input type='submit' />
+</form>
+<img id="blah" alt="your image" width="200" height="200" />
+<div>
+Healthy: <span id='healthy'></span>
+</div>
+<div>
+Sick: <span id='sick'></span>
+</div>
+<div>
+Other: <span id='other'></span>
+</div>
+
+<script>
+const onFormSubmit = (e) => {
+  e.preventDefault();
+
+  var formData = new FormData();
+  var fileField = document.querySelector("input[type='file']");
+
+  formData.append('image', fileField.files[0]);
+
+  fetch('http://localhost:5000/predict', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .catch(error => console.error('Error:', error))
+  .then(response => {
+    const renderHealthy = document.getElementById('healthy');
+    const renderSick = document.getElementById('sick');
+    const renderOther = document.getElementById('other');
+    const results = response.predictions[0].map(n => Number(n).toFixed(2));
+
+    renderHealthy.innerHTML = results[0];
+    renderSick.innerHTML = results[2];
+    renderOther.innerHTML = results[1];
+  });
+}
+const form = document.getElementById('plant-form');
+form.addEventListener("submit", onFormSubmit, true);
+</script>
