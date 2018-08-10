@@ -4,6 +4,6 @@ body {
 h1 { color: green; }
 span { font-weight: bold; }
 img {
-  max-width: 100%;
+  max-width: 300px;
   max-height: 300px;
 }
