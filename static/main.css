@@ -22,3 +22,8 @@ a:hover {
 a:active {
     text-decoration: underline;
 }
+@media(min-width: 900px) {
+#description {
+  max-width: 500px;
+}
+}

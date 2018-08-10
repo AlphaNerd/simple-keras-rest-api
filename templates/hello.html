@@ -2,9 +2,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <h1>Chronic Sickness</h1>
-<h2>Smartphone Cannabis diagnosis</h2>
 
-Choose an image for diagnosis.
+<div>
+  Choose an image for diagnosis.
+</div>
 <img
   src="{{ url_for('static', filename='upload.png')}}"
   id="blah"
@@ -62,5 +63,9 @@ const form = document.getElementById('plant-form');
 form.addEventListener("submit", onFormSubmit, true);
 </script>
 
+<br />
+<div id="description">
+Chronic sickness is a project to create a human-level diagnosis tool for Cannabis plants. If you have access to photos of sick and healthy cannabis with accurate diagnosis please contact us. We are also looking to opening a platform to crowdsource data labeling.
+</div>
 <br />
 <a href="https://github.com/morenoh149/simple-keras-rest-api/tree/hm-plant-model">Github</a>
