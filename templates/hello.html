@@ -30,7 +30,7 @@ const onFormSubmit = (e) => {
 
   formData.append('image', fileField.files[0]);
 
-  fetch('http://localhost:5000/predict', {
+  fetch('/predict', {
     method: 'POST',
     body: formData
   })
