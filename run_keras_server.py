@@ -15,7 +15,7 @@ import numpy as np
 import flask
 from flask import render_template
 import io
-import googleapiclient.discovery
+#import googleapiclient.discovery
 
 # initialize our Flask application and the Keras model
 app = flask.Flask(__name__)
@@ -87,6 +87,7 @@ def foo():
 def index():
   return render_template('hello.html')
 
+'''
 @app.route("/plant")
 def plant():
   #def predict_json(project, instances, version=None):
@@ -123,6 +124,7 @@ def plant():
     raise RuntimeError(response['error'])
 
   return response['predictions']
+'''
 
 # if this is the main thread of execution first load the model and
 # then start the server
