@@ -1,8 +1,13 @@
-<h1>Upload photo</h1>
-<style>
-span { font-weight: bold; }
-</style>
+<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
 
+<h1>Chronic Sickness</h1>
+<h2>Cannabis diagnosis from your smartphone!</h2>
+
+<img
+  src="{{ url_for('static', filename='upload.png')}}"
+  id="blah"
+  alt="upload image"
+/>
 <form id='plant-form'>
   <input
     type='file'
@@ -10,16 +15,20 @@ span { font-weight: bold; }
   />
   <input type='submit' />
 </form>
-<img id="blah" alt="your image" width="200" height="200" />
-<div>
-Healthy: <span id='healthy'></span>
-</div>
-<div>
-Sick: <span id='sick'></span>
-</div>
-<div>
-Other: <span id='other'></span>
-</div>
+<table>
+  <tr>
+    <td><span id='healthy'>0.00</span></td>
+    <td>Healthy</td>
+  </tr>
+  <tr>
+    <td><span id='sick'>0.00</span></td>
+    <td>Sick</td>
+  </tr>
+  <tr>
+    <td><span id='other'>0.00</span></td>
+    <td>Other</td>
+  </tr>
+</table>
 
 <script>
 const onFormSubmit = (e) => {

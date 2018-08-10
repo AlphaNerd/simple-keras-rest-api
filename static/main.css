@@ -1,0 +1,8 @@
+body {
+  font-family: Arial;
+}
+h1 { color: green; }
+span { font-weight: bold; }
+img {
+  max-width: 100%;
+}
