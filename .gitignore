@@ -200,3 +200,8 @@ venv.bak/
 
 
 # End of https://www.gitignore.io/api/python,pycharm,macos
+
+# vim swapfiles
+*.swp
+# keras models
+*.h5
